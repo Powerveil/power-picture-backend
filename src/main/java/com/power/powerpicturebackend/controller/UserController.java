@@ -30,7 +30,7 @@ public class UserController {
      */
     @PostMapping("/register")
     @ApiOperation("用户注册")
-    public BaseResponse<Long> register(@RequestBody UserRegisterRequest userRegisterRequest) {
+    public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
         return userManager.register(userRegisterRequest);
     }
 
@@ -41,7 +41,7 @@ public class UserController {
      */
     @PostMapping("/login")
     @ApiOperation("用户登录")
-    public BaseResponse<LoginUserVO> login(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
+    public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
         return userManager.login(userLoginRequest, request);
     }
 
