@@ -73,4 +73,13 @@ public interface UserService extends IService<User> {
     Boolean updateUser(UserUpdateRequest userUpdateRequest);
 
     Page<UserVO> listUserVOByPage(UserQueryRequest userQueryRequest);
+
+    /**
+     * 是否为管理员
+     *
+     * @param user
+     * @return
+     */
+    boolean isAdmin(User user);
+
 }

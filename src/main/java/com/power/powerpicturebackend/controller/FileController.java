@@ -7,7 +7,7 @@ import com.power.powerpicturebackend.common.ResultUtils;
 import com.power.powerpicturebackend.constants.UserConstant;
 import com.power.powerpicturebackend.exception.BusinessException;
 import com.power.powerpicturebackend.exception.ErrorCode;
-import com.power.powerpicturebackend.manager.CosManager;
+import com.power.powerpicturebackend.manager.common.CosManager;
 import com.qcloud.cos.model.COSObject;
 import com.qcloud.cos.model.COSObjectInputStream;
 import com.qcloud.cos.utils.IOUtils;

@@ -16,6 +16,7 @@ import com.power.powerpicturebackend.model.dto.req.user.UserAddRequest;
 import com.power.powerpicturebackend.model.dto.req.user.UserQueryRequest;
 import com.power.powerpicturebackend.model.dto.req.user.UserUpdateRequest;
 import com.power.powerpicturebackend.model.entity.User;
+import com.power.powerpicturebackend.model.enums.UserRoleEnum;
 import com.power.powerpicturebackend.model.vo.LoginUserVO;
 import com.power.powerpicturebackend.model.vo.UserVO;
 import com.power.powerpicturebackend.service.UserService;
@@ -198,6 +199,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         // 加盐，混淆密码
         String salt = "power-picture";
         return DigestUtils.md5DigestAsHex((salt + userPassWord).getBytes());
+    }
+
+    @Override
+    public boolean isAdmin(User user) {
+        return user != null && UserRoleEnum.ADMIN.getValue().equals(user.getUserRole());
     }
 
 }
